@@ -1,0 +1,72 @@
+
+
+		<link rel="stylesheet" type="text/css" href="elude/estilos/estilos.css" media="screen">
+		<script src="elude/libs/jquery-1.11.0.min.js" language="JavaScript1.2"></script>
+		<script src="elude/script.js" language="JavaScript1.2"></script>
+
+	<body>
+		<aside>
+			<img id="ship" src="elude/imagenes/ship.png"/><br>
+			<img id="asteroid" src="elude/imagenes/asteroid.png"/><br>
+			<img id="explosion" src="elude/imagenes/explosion.png"/><br>
+			<h1>Elude Asteroids</h1>
+			<hr>
+			<h3>Controles del juego</h3>
+			<img id="contrles" src="elude/imagenes/wasd.png"/>
+			<img id="contrles" src="elude/imagenes/arrows.png"/>
+			<br>
+			<div id="recomendaciones"></div>
+			<button>iniciar</button>
+			<hr>
+			<p>Copyright @2014 Alejandro Paolo Daza</p>
+		</aside>
+		<section id="juegosec">
+
+			<canvas id="lienzo" width="700" height="500">
+				Tu navegador no es compatible
+			</canvas>
+
+			<audio id="brisa">
+				<source src="elude/sonidos/brisa.ogg" type="audio/ogg">
+				<source src="elude/sonidos/brisa.mp3" type="audio/mpeg">
+				Tu navegador no es compatible
+			</audio>
+			<audio id="explode">
+				<source src="elude/sonidos/explode.ogg" type="audio/ogg">
+				<source src="elude/sonidos/explode.mp3" type="audio/mpeg">
+				Tu navegador no es compatible
+			</audio>
+
+		</section>
+		<section id="jugadoressec">
+			<table id="jugadores">
+				<thead>
+				<tr>
+					<th> Jugador </th>
+					<th> Puntaje</th>
+				</tr>
+			</thead>
+			<tbody>
+			 <tr ng-repeat="d in dataFinal">
+				 <td>{{d.IdJugador.NNombrejugador}}</td>
+				 <td>{{d.VPuntaje}}</td>
+				</tr>
+		 </tbody>
+		</table>
+		</section>
+		<!--<dialog id="Nombre" >-->
+				<form ng-controller="EludeasteroidesCtrl">
+					<br>
+					<h1>Guarde su nombre de usuario</h1>
+					<br>
+					<h3>Nickname: <input class="frmjugador"type="text" id="NNombrejugador" value="" ng-model="NNombrejugador" /></h3>
+					<h3><input class="frmjugador" type="text" name="VPuntaje" id="VPuntaje" ng-model="VPuntaje" value="" hidden=""/></h3>
+					<br/>
+					<input class="frmjugador" type="submit" value="Enviar" ng-click="load()"/>
+				</form>
+		<!--</dialog>-->
+
+		<dialog id="tabla" ></dialog>
+
+
+	</body>

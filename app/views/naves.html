@@ -1,0 +1,46 @@
+
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width = device-width, initial-scale=1,
+    maximun-scale = 1, minimun-scale = 1, user-scalable=no"/>
+    <title>Juego GoWeb</title>
+    <script type="text/javascript" src ="naves/js/invaders.js"></script>
+    <script type="text/javascript" src ="naves/js/phaser.js"></script>
+    <script type="text/javascript" src = "naves/js/inicio.js"></script>
+    <script type="text/javascript" src = "naves/js/instrucciones.js"></script>
+    <body>
+      <section>
+        <div id = "bloque_juego"></div>
+      </section>
+        <section>
+          <table id="jugadores">
+            <thead>
+            <tr>
+              <th> Jugador </th>
+              <th> Puntaje</th>
+            </tr>
+          </thead>
+          <tbody>
+           <tr ng-repeat="d in dataFinal">
+             <td>{{d.IdJugador.NNombrejugador}}</td>
+             <td>{{d.VPuntaje}}</td>
+            </tr>
+         </tbody>
+        </table>
+        </section>
+        <!--<dialog id="Nombre" >-->
+            <form ng-controller="NavesCtrl">
+              <br>
+              <h1>Guarde su nombre de usuario</h1>
+              <br>
+              <h3>Nickname: <input type="text" id="NNombrejugador" value="" ng-model="NNombrejugador" /></h3>
+              <h3><input type="text" name="VPuntaje" id="VPuntaje" ng-model="VPuntaje" value="" hidden=""/></h3>
+              <br/>
+              <input type="submit" value="Enviar" ng-click="load()"/>
+            </form>
+        <!--</dialog>-->
+
+        <dialog id="tabla" ></dialog>
+    </body>
+  </head>

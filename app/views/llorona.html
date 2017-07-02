@@ -1,0 +1,82 @@
+
+
+
+
+		<link rel="stylesheet" type="text/css" href="llorona/estilos/default.css" media="screen">
+		<script src="llorona/js/jquery-1.11.0.min.js" language="JavaScript1.2"></script>
+		<script src="llorona/js/quica.js" language="JavaScript1.2"></script>
+		<script src="llorona/js/calaca.js" language="JavaScript1.2"></script>
+		<script src="llorona/js/script.js" language="JavaScript1.2"></script>
+
+
+
+	<body>
+		<section>
+			<canvas id="mi_canvas" width="640" height="480">
+				Tu navegador no es compatible
+			</canvas>
+		</section>
+		<section>
+			<div id="popup" style="display: none;">
+				<div class="content-popup">
+					<div class="close"><a href="#" id="close"><img src="llorona/imagenes/close.png"/></a></div>
+					<div>
+					   <h2>Teclas de juego</h2>
+					   <img src="llorona/imagenes/teclado.png"/>
+					   <h2>Creditos</h2>
+					   <p>Alejandro Paolo Daza Corredor</p>
+						<p>UNIR</p>
+						<p>Computación en el Cliente</p>
+					</div>
+				</div>
+			</div>
+			<h1>La Llorona</h1>
+			<button id="instrucciones">Ver Instrucciones</button><br>
+			<button id="iniciar">Iniciar</button>
+		</section>
+    <section>
+      <table id="usuarios">
+        <thead>
+        <tr>
+          <th> Jugador </th>
+          <th> Puntaje</th>
+        </tr>
+      </thead>
+      <tbody>
+       <tr ng-repeat="d in dataFinal">
+         <td>{{d.IdJugador.NNombrejugador}}</td>
+         <td>{{d.VPuntaje}}</td>
+        </tr>
+     </tbody>
+    </table>
+    </section>
+    <!--<dialog id="Nombre" >-->
+        <form ng-controller="LloronaCtrl">
+					<br>
+          <h1>Guarde su nombre de usuario</h1>
+          <br>
+          <h3>Nombre Jugador: <input type="text" id="NNombrejugador" value="" ng-model="NNombrejugador" /></h3>
+          <h3><input type="text" name="VPuntaje" id="VPuntaje" ng-model="VPuntaje" value="" hidden="" /></h3>
+          <br/>
+          <input type="submit" value="Enviar" ng-click="load()"/>
+        </form>
+    <!--</dialog>-->
+
+    <dialog id="tabla" ></dialog>
+
+		<audio id="pierde">
+			<source src="llorona/sonidos/pierde_vida.ogg" type="audio/ogg">
+			<source src="llorona/sonidos/pierde_vida.mp3" type="lorona/audio/mpeg">
+			<source src="llorona/sonidos/pierde_vida.wav" type="audio/wav">
+			Tu navegador no es compatible
+		</audio>
+
+		<img id="abajo" src="llorona/imagenes/kika.png"/>
+		<img id="arriba" src="llorona/imagenes/kika2.png"/>
+		<img id="salto" src="llorona/imagenes/kika.png"/>
+		<img id="sentado" src="llorona/imagenes/kika3.png"/>
+		<img id="calaca_1" src="llorona/imagenes/calaca_child.png"/>
+		<img id="calaca_2" src="llorona/imagenes/calaca_girl.png"/>
+
+
+	</body>
